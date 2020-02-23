@@ -17,7 +17,7 @@ export default {
   name: 'HeaderView'
 }
 </script>
-
+<!--scoped css只应用到这个页面-->
 <style lang="stylus" scoped>
   @import "~styles/varibles.styl"
   .header
