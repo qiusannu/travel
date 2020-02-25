@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page , index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -15,55 +15,20 @@
 <script>
 export default {
   name: 'HomeIcons',
-  data: function () {
+  props: {
+    list: Array
+  },
+  data () {
     return {
-      iconList: [{
-        id: '1001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票'
-      }, {
-        id: '1002',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/fc/b10a6b2e4f0fe102.png',
-        desc: '万龙滑雪'
-      }, {
-        id: '1003',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png',
-        desc: '故宫'
-      }, {
-        id: '1004',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/fc/b10a6b2e4f0fe102.png',
-        desc: '静之湖滑雪'
-      }, {
-        id: '1005',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-        desc: '一日游'
-      }, {
-        id: '1006',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/67/9a1678221b8e0e02.png',
-        desc: '古北水镇'
-      }, {
-        id: '1007',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/fc/b10a6b2e4f0fe102.png',
-        desc: '北京滑雪'
-      }, {
-        id: '1008',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/fc/b10a6b2e4f0fe102.png',
-        desc: '陶然亭冰雪'
-      }, {
-        id: '1009',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/ab/6f7d6e44963c9302.png',
-        desc: '泡温泉'
-      }, {
-        id: '1010',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-        desc: '中国马镇'
-      }]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {
     pages: function () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         // item在第几页记录在了page中 生成一个二维数组
         const page = Math.floor(index / 8)
         if (!pages[page]) {

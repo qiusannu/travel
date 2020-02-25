@@ -7,14 +7,17 @@
       <span class="iconfont">&#xe632;</span>
       输出/城市/游玩主题</div>
     <div class="header-right">
-      城市
+      {{this.city}}
       <span class="iconfont arrow-icon">&#xe64a;</span>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'HeaderView'
+  name: 'HeaderView',
+  props: {
+    city: String
+  }
 }
 </script>
 <!--scoped css只应用到这个页面-->
