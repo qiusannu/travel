@@ -28,8 +28,7 @@
 </template>
 <script>
 import BScroll from 'better-scroll'
-import { mapState } from 'vuex'
-import { mapMutations } from 'vuex'
+import { mapState, mapMutations } from 'vuex'
 export default {
   name: 'CityList',
   props: {
