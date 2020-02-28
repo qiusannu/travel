@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="">
     <home-header></home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
@@ -66,5 +66,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus" scoped>
+  .container
+    display : flex
+    flex-direction :row
+    width :100%
+    .red-box
+      background red
+      width : 1rem
+      height : 1rem
+      border-radius :50px
 </style>
