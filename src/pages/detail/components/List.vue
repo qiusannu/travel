@@ -38,6 +38,4 @@ export default {
   }
   .item-children
     padding : 0 0.2rem
-
-
 </style>

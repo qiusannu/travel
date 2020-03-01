@@ -1,7 +1,7 @@
 <!--单文件组件 vue的组件-->
 <template>
   <div id="app">
-    <keep-alive>
+    <keep-alive exclude="Detail">
       <router-view/>
     </keep-alive>
   </div>
